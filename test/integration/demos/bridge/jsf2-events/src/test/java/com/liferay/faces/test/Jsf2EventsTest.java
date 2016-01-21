@@ -39,8 +39,6 @@ import com.liferay.faces.test.util.TesterBase;
 @RunWith(Arquillian.class)
 public class Jsf2EventsTest extends TesterBase {
 
-	// portlet topper for customer
-//	private static final String customerPortletDisplayNameXpath = "(//header[@class='portlet-topper']/h1/span)[1]";
 	private static final String briansInputXpath =
 		"//input[@type='image']/../following-sibling::td[1][contains(text(),'1')]/../td[1]/input";
 	private static final String briansFirstNameXpath =
@@ -104,14 +102,7 @@ public class Jsf2EventsTest extends TesterBase {
 		browser.navigate().to(url);
 		logger.log(Level.INFO, "browser.getTitle() = " + browser.getTitle());
 		logger.log(Level.INFO, "browser.getCurrentUrl() = " + browser.getCurrentUrl());
-		getPortletDisplayName();
-		logger.log(Level.INFO, "customerPortletDisplayName displayName = " + displayName.getText());
 
-		assertTrue("customerPortletDisplayName displayName.isDisplayed()", displayName.isDisplayed());
-
-		logger.log(Level.INFO,
-			"browser.findElements(By.xpath(portletDisplayNameXpath)).size() = " +
-			browser.findElements(By.xpath(displayNameXpath)).size());
 		logger.log(Level.INFO,
 			"browser.findElements(By.xpath(briansInputXpath)).size() = " +
 			browser.findElements(By.xpath(briansInputXpath)).size());

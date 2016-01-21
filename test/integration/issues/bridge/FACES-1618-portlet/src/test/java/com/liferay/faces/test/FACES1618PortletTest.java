@@ -78,8 +78,6 @@ public class FACES1618PortletTest extends TesterBase {
 		browser.navigate().to(url);
 		logger.log(Level.INFO, "browser.getTitle() = " + browser.getTitle());
 		logger.log(Level.INFO, "browser.getCurrentUrl() = " + browser.getCurrentUrl());
-		getPortletDisplayName();
-		logger.log(Level.INFO, "displayName.getText() = " + displayName.getText());
 
 		logger.log(Level.INFO, "headResourceIdsSpan.getText() = " + headResourceIdsSpan.getText());
 		headResourceIds = new StringBuilder();
@@ -96,7 +94,6 @@ public class FACES1618PortletTest extends TesterBase {
 
 		logger.log(Level.INFO, "submitButton.isDisplayed() = " + submitButton.isDisplayed());
 
-		assertTrue("displayName.isDisplayed()", displayName.isDisplayed());
 		assertTrue(
 			"There should be more than 1 headResourceIds, but resourceIds.length == " + resourceIds.length,
 			(resourceIds.length > 1)
