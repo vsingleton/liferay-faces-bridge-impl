@@ -19,14 +19,14 @@ Import-Package:\
 	org.w3c.dom.*,\
 	org.xml.sax,\
 	org.xml.sax.*
--includeresource: \
+-includeresource:\
 	liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar=liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar,\
 	liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar=liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
 	liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar=liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
 	liferay-faces-util-3.0.0-SNAPSHOT.jar=liferay-faces-util-3.0.0-SNAPSHOT.jar,\
 	jsf-api-2.2.13.jar=jsf-api-2.2.13.jar,\
 	jsf-impl-2.2.13.jar=jsf-impl-2.2.13.jar
-Bundle-ClassPath: \
+Bundle-ClassPath:\
 	.,\
 	liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar,\
 	liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
@@ -34,7 +34,10 @@ Bundle-ClassPath: \
 	jsf-api-2.2.13.jar,\
 	jsf-impl-2.2.13.jar
 Bundle-Version: 1.0.0
--privatepackage: com.liferay.faces.demos
+-privatepackage:\
+	com.liferay.faces.demos,\
+	com.liferay.faces.demos.bean,\
+	com.liferay.faces.demos.dto
 Servlet-Context-Name: primefaces-bnd-portlet
 Web-ContextPath: /primefaces-bnd-portlet
 -dsannotations: *
