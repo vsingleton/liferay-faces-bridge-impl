@@ -29,11 +29,11 @@
 								<p:message for="lastName" />
 							</alloy:field>
 							<alloy:field id="emailAddressField" label="#{i18n['email-address']}">
-								<p:inputText id="emailAddress" label="#{i18n['email-address']}" required="true"
+								<h:inputText id="emailAddress" label="#{i18n['email-address']}" required="true"
 									validatorMessage="#{i18n['invalid-email-address']}" value="#{applicantModelBean.emailAddress}">
 									<f:validateRegex pattern=".+[@].+[.].+" />
 									<p:ajax update="emailAddressField" />
-								</p:inputText>
+								</h:inputText>
 								<p:message for="emailAddress" />
 							</alloy:field>
 							<alloy:field id="phoneNumberField" label="#{i18n['phone-number']}">
@@ -46,13 +46,7 @@
 						</alloy:column>
 						<alloy:column id="c1b" width="50">
 							<alloy:field id="dateOfBirthField" label="#{i18n['birthday']}">
-								<p:calendar id="dateOfBirth" label="#{i18n['birthday']}" required="true"
-									pattern="#{portletPreferencesValues['datePattern'][0]}" showOn="button"
-									value="#{applicantModelBean.dateOfBirth}">
-									<f:convertDateTime pattern="#{portletPreferencesValues['datePattern'][0]}" />
-									<p:ajax update="dateOfBirthField" />
-								</p:calendar>
-								<p:message for="dateOfBirth" />
+								<div>Hello paragraph</div>
 							</alloy:field>
 							<alloy:field id="cityField" label="#{i18n['city']}">
 								<p:inputText id="city" label="#{i18n['city']}" required="true" value="#{applicantModelBean.city}">
@@ -124,27 +118,6 @@
 						<p:commandButton id="exportButton" ajax="false" icon="ui-icon-disk" value="#{i18n['export-as-csv']}">
 							<p:dataExporter fileName="uploaded-files" target="uploadedFilesTable" type="csv" />
 						</p:commandButton>
-						<p:dataTable id="uploadedFilesTable" value="#{applicantModelBean.uploadedFiles}" var="uploadedFile">
-							<p:column exportable="false">
-								<p:commandButton id="showDialogButton" icon="ui-icon-trash" onclick="PF('confirmation').show()">
-									<f:setPropertyActionListener value="#{uploadedFile.id}" target="#{applicantViewBean.uploadedFileId}" />
-								</p:commandButton>
-							</p:column>
-							<p:column>
-								<f:facet name="header">
-									<h:outputText value="#{i18n['file-name']}" />
-								</f:facet>
-								<h:outputText value="#{uploadedFile.name}" />
-							</p:column>
-							<p:column>
-								<f:facet name="header">
-									<h:outputText value="#{i18n['size']}" />
-								</f:facet>
-								<h:outputText value="#{uploadedFile.size}" />
-							</p:column>
-						</p:dataTable>
-						<p:fileUpload fileUploadListener="#{applicantBackingBean.handleFileUpload}" mode="advanced" multiple="true"
-							update="uploadedFilesTable" />
 					</h:form>
 				</alloy:column>
 			</alloy:row>
