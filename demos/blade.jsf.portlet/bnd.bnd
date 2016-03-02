@@ -30,7 +30,6 @@ Import-Package:\
 	liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar=liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
 	liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar=liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
 	liferay-faces-util-3.0.0-SNAPSHOT.jar=liferay-faces-util-3.0.0-SNAPSHOT.jar,\
-	liferay-faces-alloy-3.0.0-SNAPSHOT.jar=liferay-faces-alloy-3.0.0-SNAPSHOT.jar,\
 	jsf-api-2.2.13.jar=jsf-api-2.2.13.jar,\
 	jsf-impl-2.2.13.jar=jsf-impl-2.2.13.jar
 Bundle-ClassPath: \
@@ -39,7 +38,6 @@ Bundle-ClassPath: \
 	liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
 	liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
 	liferay-faces-util-3.0.0-SNAPSHOT.jar,\
-	liferay-faces-alloy-3.0.0-SNAPSHOT.jar,\
 	jsf-api-2.2.13.jar,\
 	jsf-impl-2.2.13.jar
 Bundle-Version: 1.0.0

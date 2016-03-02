@@ -27,11 +27,6 @@
          </dependency>
          
          <dependency>
-            <groupId>com.liferay.faces.alloy</groupId>
-            <artifactId>liferay-faces-alloy</artifactId>
-            <version>3.0.0-SNAPSHOT</version>
-         </dependency>
-         <dependency>
             <groupId>com.liferay.faces.util</groupId>
             <artifactId>liferay-faces-util</artifactId>
             <version>3.0.0-SNAPSHOT</version>
@@ -126,11 +121,6 @@
 
 
 	<dependencies>
-
-         <dependency>
-            <groupId>com.liferay.faces.alloy</groupId>
-            <artifactId>liferay-faces-alloy</artifactId>
-         </dependency>
 
 		<dependency>
          <groupId>com.liferay</groupId>

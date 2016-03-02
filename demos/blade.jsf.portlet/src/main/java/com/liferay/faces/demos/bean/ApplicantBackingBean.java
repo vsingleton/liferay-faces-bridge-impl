@@ -25,7 +25,6 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
-import com.liferay.faces.alloy.component.inputfile.FileUploadEvent;
 import com.liferay.faces.demos.dto.City;
 import com.liferay.faces.util.context.FacesContextHelperUtil;
 import com.liferay.faces.util.logging.Logger;
@@ -83,14 +82,6 @@ public class ApplicantBackingBean implements Serializable {
 		catch (Exception e) {
 			logger.error(e);
 		}
-	}
-
-	public void handleFileUpload(FileUploadEvent fileUploadEvent) throws Exception {
-		List<UploadedFile> uploadedFiles = applicantModelBean.getUploadedFiles();
-		UploadedFile uploadedFile = fileUploadEvent.getUploadedFile();
-		uploadedFiles.add(uploadedFile);
-		logger.debug("Received fileName=[{0}] absolutePath=[{1}]", uploadedFile.getName(),
-			uploadedFile.getAbsolutePath());
 	}
 
 	public void postalCodeListener(ValueChangeEvent valueChangeEvent) {
