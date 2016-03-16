@@ -1,0 +1,45 @@
+Bundle-SymbolicName: jsf.applicant
+Import-Package:\
+	!com.sun.enterprise,\
+	!com.sun.enterprise.*,\
+	!javax.ejb.*,\
+	!javax.inject.*,\
+	!javax.enterprise.*,\
+	!javax.persistence.*,\
+	!javax.validation.*,\
+	!groovy.*,\
+	!org.mortbay.jetty.*,\
+	!org.apache,\
+	javax.el;version="3.0.0",\
+	com.sun.el,\
+	com.liferay.portal.kernel.servlet,\
+	com.liferay.portal.kernel.servlet.*,\
+	com.liferay.util.bridges.wai.*.\
+	com.liferay.util.bean.*,\
+	com.liferay.util.*,\
+	*
+Bundle-ClassPath:\
+	WEB-INF/classes,\
+	WEB-INF/lib/liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-util-3.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/jsf-api-2.2.13.jar,\
+	WEB-INF/lib/jsf-impl-2.2.13.jar,\
+	WEB-INF/lib/commons-fileupload-1.3.1.jar,\
+	WEB-INF/lib/commons-io-2.2.jar
+-includeresource:\
+	WEB-INF/lib/liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar=liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar=liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar=liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-util-3.0.0-SNAPSHOT.jar=liferay-faces-util-3.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/jsf-api-2.2.13.jar=jsf-api-2.2.13.jar,\
+	WEB-INF/lib/jsf-impl-2.2.13.jar=jsf-impl-2.2.13.jar,\
+	WEB-INF/lib/commons-fileupload-1.3.1.jar=commons-fileupload-1.3.1.jar,\
+	WEB-INF/lib/commons-io-2.2.jar=commons-io-2.2.jar
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.faces.demos.portlet
+Web-ContextPath: /jsf-applicant
+-dsannotations: *
+-wab: src/main/webapp
+
