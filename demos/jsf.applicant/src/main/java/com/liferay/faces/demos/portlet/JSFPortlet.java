@@ -33,6 +33,7 @@ import javax.servlet.ServletContext;
 	property = {
 		"com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.instanceable=true",
+		"com.liferay.portlet.ajaxable=false",
 		"javax.portlet.display-name=JSF Applicant Demo",
 		"javax.portlet.init-param.javax.portlet.faces.defaultViewId.view=/WEB-INF/views/portletViewMode.xhtml",
 		"javax.portlet.security-role-ref=power-user,user"/*,
