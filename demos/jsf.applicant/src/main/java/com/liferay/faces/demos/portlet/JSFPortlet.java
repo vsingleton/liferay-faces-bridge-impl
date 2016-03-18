@@ -36,6 +36,7 @@ import javax.servlet.ServletContext;
 		"com.liferay.portlet.ajaxable=false",
 		"javax.portlet.display-name=JSF Applicant Demo",
 		"javax.portlet.init-param.javax.portlet.faces.defaultViewId.view=/WEB-INF/views/portletViewMode.xhtml",
+		"javax.portlet.preferences=classpath:/META-INF/portlet-preferences/default-portlet-preferences.xml",
 		"javax.portlet.security-role-ref=power-user,user"/*,
 		"com.liferay.portlet.requires-namespaced-parameters=false"*/
 	},
