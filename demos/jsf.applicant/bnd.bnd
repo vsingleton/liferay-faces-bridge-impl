@@ -1,6 +1,5 @@
 Bundle-SymbolicName: jsf.applicant
 Import-Package:\
-	!com.sun.enterprise,\
 	!com.sun.enterprise.*,\
 	!com.swabunga.spell.*,\
 	!groovy.*,\
