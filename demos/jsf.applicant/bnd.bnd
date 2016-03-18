@@ -14,42 +14,62 @@ Import-Package:\
 	!org.apache,\
 	!org.apache.*,\
 	!org.apache.axis.tools.ant.*,\
-	javax.el;version="3.0.0",\
 	!com.liferay.portal.freemarker,\
-	com.liferay.util.bridges.wai.*,\
+	javax.el;version="3.0.0",\
+	com.liferay.portal.kernel.servlet,\
+	com.liferay.portal.kernel.servlet.*,\
+	com.liferay.portal.kernel.servlet.filters.invoker,\
+	com.liferay.portal.model,\
+	com.liferay.portal.osgi.web.servlet.jsp.compiler,\
+	com.liferay.portal.security.access.control,\
+	com.liferay.portal.security.auth,\
+	com.liferay.portal.security.permission,\
+	com.liferay.portal.service,\
+	com.liferay.portal.servlet,\
+	com.liferay.portal.servlet.filters.aggregate,\
+	com.liferay.portal.servlet.filters.dynamiccss,\
+	com.liferay.portal.spring.context,\
+	com.liferay.portal.theme,\
+	com.liferay.portal.util,\
+	com.liferay.portlet,\
+	com.liferay.taglib.aui,\
+	com.liferay.taglib.portlet,\
+	com.liferay.taglib.portletext,\
+	com.liferay.taglib.security,\
+	com.liferay.taglib.theme,\
+	com.liferay.taglib.ui,\
+	com.liferay.taglib.util,\
 	com.sun.el,\
-	com.liferay.portal.*,\
-	com.liferay.util.bridges.wai.*.\
-	com.liferay.util.bean.*,\
-	com.liferay.util.*,\
+	com.sun.el.lang,\
+	com.sun.el.parser,\
+	com.sun.el.stream,\
+	com.sun.el.util,\
 	*
 Bundle-ClassPath:\
-	WEB-INF/classes,\
-	WEB-INF/lib/liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar,\
-	WEB-INF/lib/liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
-	WEB-INF/lib/liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
-	WEB-INF/lib/liferay-faces-util-3.0.0-SNAPSHOT.jar,\
-	WEB-INF/lib/jsf-api-2.2.13.jar,\
-	WEB-INF/lib/jsf-impl-2.2.13.jar,\
 	WEB-INF/lib/commons-fileupload-1.3.1.jar,\
 	WEB-INF/lib/commons-io-2.2.jar,\
+	WEB-INF/lib/jsf-api-2.2.13.jar,\
+	WEB-INF/lib/jsf-impl-2.2.13.jar,\
+	WEB-INF/lib/liferay-faces-alloy-3.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-util-3.0.0-SNAPSHOT.jar,\
 	WEB-INF/lib/com.liferay.util.bridges-2.0.1-SNAPSHOT.jar,\
-	WEB-INF/lib/com.liferay.util.java-2.0.1-SNAPSHOT.jar,\
-	WEB-INF/lib/com.liferay.util.taglib-2.1.0-SNAPSHOT.jar
+	WEB-INF/lib/com.liferay.util.java-2.0.1-SNAPSHOT.jar
 -includeresource:\
 	WEB-INF/lib/liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar=liferay-faces-bridge-api-4.0.0-SNAPSHOT.jar,\
 	WEB-INF/lib/liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar=liferay-faces-bridge-impl-4.0.0-SNAPSHOT.jar,\
 	WEB-INF/lib/liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar=liferay-faces-bridge-ext-5.0.0-SNAPSHOT.jar,\
 	WEB-INF/lib/liferay-faces-util-3.0.0-SNAPSHOT.jar=liferay-faces-util-3.0.0-SNAPSHOT.jar,\
+	WEB-INF/lib/liferay-faces-alloy-3.0.0-SNAPSHOT.jar=liferay-faces-alloy-3.0.0-SNAPSHOT.jar,\
 	WEB-INF/lib/jsf-api-2.2.13.jar=jsf-api-2.2.13.jar,\
 	WEB-INF/lib/jsf-impl-2.2.13.jar=jsf-impl-2.2.13.jar,\
 	WEB-INF/lib/commons-fileupload-1.3.1.jar=commons-fileupload-1.3.1.jar,\
 	WEB-INF/lib/commons-io-2.2.jar=commons-io-2.2.jar,\
 	WEB-INF/lib/com.liferay.util.bridges-2.0.1-SNAPSHOT.jar=com.liferay.util.bridges-2.0.1-SNAPSHOT.jar,\
-	WEB-INF/lib/com.liferay.util.java-2.0.1-SNAPSHOT.jar=com.liferay.util.java-2.0.1-SNAPSHOT.jar,\
-	WEB-INF/lib/com.liferay.util.taglib-2.1.0-SNAPSHOT.jar=com.liferay.util.taglib-2.1.0-SNAPSHOT.jar
+	WEB-INF/lib/com.liferay.util.java-2.0.1-SNAPSHOT.jar=com.liferay.util.java-2.0.1-SNAPSHOT.jar
 Bundle-Version: 1.0.0
-Export-Package: com.liferay.faces.demos.portlet
 Web-ContextPath: /jsf-applicant
 -dsannotations: *
 -wab: src/main/webapp

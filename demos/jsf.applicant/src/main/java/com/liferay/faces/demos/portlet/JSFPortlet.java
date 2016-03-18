@@ -46,16 +46,17 @@ public class JSFPortlet extends GenericFacesPortlet /*implements ServletContextA
 
 	@Activate
 	public void activate(BundleContext bundleContext) {
-		System.err.println("!@#$ activated " + this);
+		System.err.println("activate ... " + this);
 	}
 
 	public void destroy() {
-		System.err.println("Destroyed ");
+		System.err.println("destroy ...");
 		super.destroy();
 	}
 
-	@Reference(target="(osgi.web.symbolicname=jsf.applicant)")
+	@Reference(target="(osgi.web.symbolicname=jsf.applicant*)")
 	protected void setServletContext (ServletContext servletContext) {
+		System.err.println("setServletContext ...");
 		//_servletContext = servletContext;
 	}
 
@@ -63,11 +64,12 @@ public class JSFPortlet extends GenericFacesPortlet /*implements ServletContextA
 	public void init(PortletConfig portletConfig) throws PortletException {
 		
 		super.init(portletConfig);
-		System.err.println("Init");		
+		System.err.println("init ...");
 	}
 
 	/*@Override
 	public ServletContext getServletContext() {
+		System.err.println("getServletContext ...");
 		return _servletContext;
 	}*/
 	
