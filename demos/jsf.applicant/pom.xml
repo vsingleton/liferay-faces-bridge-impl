@@ -98,46 +98,12 @@
 
 	<build>
 		<plugins>
-			<!-- <plugin>
-				<groupId>org.apache.felix</groupId>
-				<artifactId>maven-bundle-plugin</artifactId>
-				<version>3.0.1</version>
-				<executions>
-    				<execution>
-      					<id>bundle-manifest</id>
-      					<phase>process-classes</phase>
-      					<goals>
-        					<goal>manifest</goal>
-      					</goals>
-				    </execution>
-				  </executions>
-				  <configuration>
-				    <supportedProjectTypes>
-				      <supportedProjectType>jar</supportedProjectType>
-				      <supportedProjectType>bundle</supportedProjectType>
-				      <supportedProjectType>war</supportedProjectType>
-				    </supportedProjectTypes>
-					<instructions>
-						<Embed-Dependency>*;scope=compile|runtime;groupId=!org.osgi</Embed-Dependency>
-						<Embed-Transitive>true</Embed-Transitive>
-						<Include-Resource>{maven-resources}</Include-Resource>
-						<Private-Package>com.liferay.faces.demos.bean,com.liferay.faces.demos.dto</Private-Package>
-						<Import-Package>*</Import-Package>
-						<Bundle-SymbolicName>jsf.applicant</Bundle-SymbolicName>
-						<_dsannotations>*</_dsannotations>
-					</instructions>
-				</configuration>
-			</plugin>-->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.6</version>
-				<!--configuration>
-					<archive>
-						<manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
-					</archive>
-				</configuration>-->
-			</plugin>
+
+			<!--
+				remember that the order in which these plugins are listed here
+				is the order in which they are executed especially if these
+				plugins do things in during the same phase(s) ...
+			-->
 			<plugin>
 				<groupId>biz.aQute.bnd</groupId>
 				<artifactId>bnd-maven-plugin</artifactId>
@@ -162,6 +128,36 @@
 						<version>2.0.0</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>prepare-and-create-war</id>
+						<phase>package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<target unless="maven.skip.ant.war">
+								<move todir="${project.build.directory}/${project.build.finalName}/.">
+									<fileset dir="${project.build.directory}/${project.build.finalName}/WEB-INF/classes" >
+										<include name="OSGI-INF" />
+										<include name="OSGI-INF/*" />
+									</fileset>
+								</move>
+								<delete dir="${project.build.directory}/${project.build.finalName}/WEB-INF/classes/WEB-INF" failonerror="true" />
+								<delete dir="${project.build.directory}/${project.build.finalName}.war" failonerror="true" />
+								<war
+									destfile="${project.build.directory}/${project.build.finalName}.war"
+									manifest="${project.build.directory}/${project.build.finalName}/WEB-INF/classes/META-INF/MANIFEST.MF"
+									webxml="${project.build.directory}/${project.build.finalName}/WEB-INF/web.xml">
+									<fileset dir="${project.build.directory}/${project.build.finalName}" />
+								</war>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>

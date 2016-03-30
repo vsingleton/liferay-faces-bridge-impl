@@ -34,13 +34,14 @@ import javax.servlet.ServletContext;
 		"com.liferay.portlet.display-category=category.sample",
 		"com.liferay.portlet.instanceable=true",
 		"com.liferay.portlet.ajaxable=false",
-		"javax.portlet.display-name=JSF Applicant Demo",
+		"javax.portlet.display-name=jsf.applicant.ds.wab",
 		"javax.portlet.init-param.javax.portlet.faces.defaultViewId.view=/WEB-INF/views/portletViewMode.xhtml",
-		"javax.portlet.preferences=classpath:/META-INF/preferences.xml"
+		"javax.portlet.init-param.javax.portlet.faces.defaultViewId.edit=/WEB-INF/views/portletEditMode.xhtml",
+		"javax.portlet.init-param.javax.portlet.faces.defaultViewId.help=/WEB-INF/views/portletHelpMode.xhtml",
+		"javax.portlet.preferences=classpath:/META-INF/preferences.xml",
 		"javax.portlet.security-role-ref=power-user,user",
-/*
+		"javax.portlet.portlet-mode=text/html;view,edit,help",
 		"com.liferay.portlet.requires-namespaced-parameters=false"
-*/
 	},
 	service = Portlet.class
 )
