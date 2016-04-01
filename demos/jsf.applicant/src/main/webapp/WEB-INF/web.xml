@@ -22,6 +22,18 @@
 		<param-value>true</param-value>
 	</context-param>
 
+	<!-- LPS-64789 or else suffer NPE in PortletTracker or InvokerPortletImpl.init??? -->
+	<!-- java.lang.NullPointerException
+	at com.liferay.portal.osgi.web.portlet.tracker.internal.PortletTracker.createBundlePortletApp(PortletTracker.java:929)
+	at com.liferay.portal.osgi.web.portlet.tracker.internal.PortletTracker.addingPortlet(PortletTracker.java:258)
+	at com.liferay.portal.osgi.web.portlet.tracker.internal.PortletTracker.addingService(PortletTracker.java:157)
+	at com.liferay.portal.osgi.web.portlet.tracker.internal.PortletTracker.addingService(PortletTracker.java:103)
+	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
+	-->
+	<listener>
+      <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
+   </listener>
+
 <servlet>
    <servlet-name>Portlet Servlet</servlet-name>
    <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
