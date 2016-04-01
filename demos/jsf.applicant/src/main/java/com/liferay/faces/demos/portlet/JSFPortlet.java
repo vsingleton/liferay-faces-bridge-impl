@@ -15,18 +15,14 @@
  */
 package com.liferay.faces.demos.portlet;
 
-import org.osgi.framework.BundleContext;
-import org.osgi.service.component.annotations.Activate;
-import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-
-//import com.liferay.portal.osgi.web.portlet.tracker.ServletContextAware;
-
 import javax.portlet.Portlet;
 import javax.portlet.PortletConfig;
 import javax.portlet.PortletException;
 import javax.portlet.faces.GenericFacesPortlet;
-import javax.servlet.ServletContext;
+
+import org.osgi.framework.BundleContext;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
 
 @Component(
 	immediate = true,
@@ -45,9 +41,7 @@ import javax.servlet.ServletContext;
 	},
 	service = Portlet.class
 )
-public class JSFPortlet extends GenericFacesPortlet /*implements ServletContextAware*/ {
-
-	//private ServletContext _servletContext;
+public class JSFPortlet extends GenericFacesPortlet {
 
 	@Activate
 	public void activate(BundleContext bundleContext) {
@@ -59,12 +53,6 @@ public class JSFPortlet extends GenericFacesPortlet /*implements ServletContextA
 		super.destroy();
 	}
 
-	@Reference(target="(osgi.web.symbolicname=jsf.applicant*)")
-	protected void setServletContext (ServletContext servletContext) {
-		System.err.println("setServletContext ...");
-		//_servletContext = servletContext;
-	}
-
 	@Override
 	public void init(PortletConfig portletConfig) throws PortletException {
 		
@@ -72,11 +60,5 @@ public class JSFPortlet extends GenericFacesPortlet /*implements ServletContextA
 		System.err.println("init ...");
 	}
 
-	/*@Override
-	public ServletContext getServletContext() {
-		System.err.println("getServletContext ...");
-		return _servletContext;
-	}*/
-	
 }
 
