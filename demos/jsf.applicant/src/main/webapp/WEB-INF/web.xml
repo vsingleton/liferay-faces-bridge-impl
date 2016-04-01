@@ -34,6 +34,18 @@
 		<listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
 	</listener>
 
+	<!-- Although the FacesServlet will not be invoked by any portlet requests, it is required to initialize JSF. -->
+	<servlet>
+		<servlet-name>FacesServlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<!-- MyFaces will not initialize unless a servlet-mapping to the Faces Servlet is present. -->
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
+
 <servlet>
    <servlet-name>Portlet Servlet</servlet-name>
    <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
@@ -48,17 +60,6 @@
    <url-pattern>/portlet-servlet/*</url-pattern>
 </servlet-mapping>
 
-	<!-- Although the FacesServlet will not be invoked by any portlet requests, it is required to initialize JSF. -->
-	<servlet>
-		<servlet-name>FacesServlet</servlet-name>
-		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<!-- MyFaces will not initialize unless a servlet-mapping to the Faces Servlet is present. -->
-	<servlet-mapping>
-		<servlet-name>Faces Servlet</servlet-name>
-		<url-pattern>*.xhtml</url-pattern>
-	</servlet-mapping>
 	<security-constraint>
 		<display-name>Prevent direct access to Facelet XHTML</display-name>
 		<web-resource-collection>
