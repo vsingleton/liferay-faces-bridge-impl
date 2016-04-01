@@ -14,9 +14,7 @@ Import-Package:\
 	!org.apache.*,\
 	!org.apache.axis.tools.ant.*,\
 	!com.liferay.portal.freemarker,\
-	com.liferay.portal.kernel.servlet,\
 	com.liferay.portal.kernel.servlet.*,\
-	com.liferay.portal.kernel.servlet.filters.invoker,\
 	com.liferay.portal.model,\
 	com.liferay.portal.osgi.web.servlet.jsp.compiler,\
 	com.liferay.portal.security.access.control,\
