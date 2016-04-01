@@ -31,14 +31,17 @@
 	at org.osgi.util.tracker.ServiceTracker$Tracked.customizerAdding(ServiceTracker.java:941)
 	-->
 	<listener>
-      <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
-   </listener>
+		<listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
+	</listener>
 
 <servlet>
    <servlet-name>Portlet Servlet</servlet-name>
    <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+	<init-param>
+		<param-name>foo</param-name>
+		<param-value>bar</param-value>
+	</init-param>
    <load-on-startup>1</load-on-startup>
-	<init-param><param-name>foo</param-name><param-value>bar</param-value></init-param>
 </servlet>
 <servlet-mapping>
    <servlet-name>Portlet Servlet</servlet-name>
