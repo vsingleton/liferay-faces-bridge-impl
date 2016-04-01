@@ -44,7 +44,7 @@ import org.osgi.service.component.annotations.Component;
 public class JSFPortlet extends GenericFacesPortlet {
 
 	@Activate
-	public void activate(BundleContext bundleContext) {
+	public void activate() {
 		System.err.println("activate ... " + this);
 	}
 
