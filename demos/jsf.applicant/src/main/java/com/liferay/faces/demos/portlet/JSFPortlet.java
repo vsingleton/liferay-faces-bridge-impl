@@ -61,7 +61,7 @@ public class JSFPortlet extends GenericFacesPortlet {
 		System.err.println("init ...");
 	}
 	
-	@Reference(target = "(servlet.init.portlet-class=com.liferay.test.ELResolverPortlet)")
+	@Reference(target = "(servlet.init.portlet-class=com.liferay.portal.kernel.servlet.PortletServlet)")
 	protected void setServlet(Servlet servlet) {}
 
 }
