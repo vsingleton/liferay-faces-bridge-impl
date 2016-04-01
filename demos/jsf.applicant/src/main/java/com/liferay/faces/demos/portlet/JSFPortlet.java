@@ -19,10 +19,11 @@ import javax.portlet.Portlet;
 import javax.portlet.PortletConfig;
 import javax.portlet.PortletException;
 import javax.portlet.faces.GenericFacesPortlet;
+import javax.servlet.Servlet;
 
-import org.osgi.framework.BundleContext;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
 
 @Component(
 	immediate = true,
@@ -59,6 +60,9 @@ public class JSFPortlet extends GenericFacesPortlet {
 		super.init(portletConfig);
 		System.err.println("init ...");
 	}
+	
+	@Reference(target = "(servlet.init.portlet-class=com.liferay.test.ELResolverPortlet)")
+	protected void setServlet(Servlet servlet) {}
 
 }
 

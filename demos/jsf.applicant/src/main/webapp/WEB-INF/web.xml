@@ -38,6 +38,7 @@
    <servlet-name>Portlet Servlet</servlet-name>
    <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
    <load-on-startup>1</load-on-startup>
+	<init-param><param-name>foo</param-name><param-value>bar</param-value></init-param>
 </servlet>
 <servlet-mapping>
    <servlet-name>Portlet Servlet</servlet-name>
