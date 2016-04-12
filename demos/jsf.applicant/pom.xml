@@ -129,36 +129,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>prepare-and-create-war</id>
-						<phase>package</phase>
-						<goals>
-							<goal>run</goal>
-						</goals>
-						<configuration>
-							<target unless="maven.skip.ant.war">
-								<move todir="${project.build.directory}/${project.build.finalName}/.">
-									<fileset dir="${project.build.directory}/${project.build.finalName}/WEB-INF/classes" >
-										<include name="OSGI-INF" />
-										<include name="OSGI-INF/*" />
-									</fileset>
-								</move>
-								<delete dir="${project.build.directory}/${project.build.finalName}/WEB-INF/classes/WEB-INF" failonerror="true" />
-								<delete dir="${project.build.directory}/${project.build.finalName}.war" failonerror="true" />
-								<war
-									destfile="${project.build.directory}/${project.build.finalName}.war"
-									manifest="${project.build.directory}/${project.build.finalName}/WEB-INF/classes/META-INF/MANIFEST.MF"
-									webxml="${project.build.directory}/${project.build.finalName}/WEB-INF/web.xml">
-									<fileset dir="${project.build.directory}/${project.build.finalName}" />
-								</war>
-							</target>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 		</plugins>
 	</build>
 
