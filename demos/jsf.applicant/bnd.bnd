@@ -45,5 +45,6 @@ Import-Package:\
 Bundle-Version: 1.0.0
 Web-ContextPath: /jsf.applicant.ds.wab
 -dsannotations: *
+-donotcopy: (WEB-INF)
 -wab: src/main/webapp
 
