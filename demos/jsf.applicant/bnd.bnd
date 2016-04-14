@@ -42,9 +42,8 @@ Import-Package:\
 	com.sun.el.util,\
 	javax.el;version="3.0.0",\
 	*
+-includeresource.wab: src/main/webapp
 Bundle-Version: 1.0.0
 Web-ContextPath: /jsf.applicant.ds.wab
 -dsannotations: *
--donotcopy: (WEB-INF)
--wab: src/main/webapp
 
