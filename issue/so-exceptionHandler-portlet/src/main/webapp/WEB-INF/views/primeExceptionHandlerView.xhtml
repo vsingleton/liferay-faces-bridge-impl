@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core"
+		xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:h="http://xmlns.jcp.org/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+	</h:head>
+	<h:body>
+
+		<h:form>
+			<h3 style="margin-top:0">AJAX 1410</h3>
+			<p:commandButton actionListener="#{exceptionHandlerBean.throwNpe}"
+							 ajax="true"
+							 value="Throw NullPointerException!" />
+
+			<p:ajaxExceptionHandler type="javax.faces.application.ViewExpiredException"
+									update=":exceptionDialog"
+									onexception="PF('exceptionDialogVar').show();" />
+
+			<p:ajaxExceptionHandler type="java.lang.NullPointerException"
+									update=":exceptionDialog"
+									onexception="PF('exceptionDialogVar').show();" />
+		</h:form>
+
+		<p:dialog id="exceptionDialog" header="Exception '#{pfExceptionHandler.type}' occured!" widgetVar="exceptionDialogVar"
+				  height="500px">
+			Message: #{pfExceptionHandler.message} <br/>
+			StackTrace: <h:outputText value="#{pfExceptionHandler.formattedStackTrace}" escape="false" /> <br />
+
+			<p:button onclick="document.location.href = document.location.href;"
+					  value="Reload!"
+					  rendered="#{pfExceptionHandler.type == 'javax.faces.application.ViewExpiredException'}" />
+		</p:dialog>
+
+	</h:body>
+
+</f:view>
